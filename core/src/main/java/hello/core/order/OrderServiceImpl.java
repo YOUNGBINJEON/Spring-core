@@ -17,7 +17,7 @@ public class OrderServiceImpl implements OrderService{
     //private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
     private DiscountPolicy discountPolicy;
 
-    @Autowired
+    @Autowired(required = false)
     public void setMemberRepository(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
@@ -25,6 +25,7 @@ public class OrderServiceImpl implements OrderService{
     public void setDiscountPolicy(DiscountPolicy discountPolicy) {
         this.discountPolicy = discountPolicy;
     }
+
 
     @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
