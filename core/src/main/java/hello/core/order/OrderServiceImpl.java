@@ -12,21 +12,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class OrderServiceImpl implements OrderService{
 
-    private MemberRepository memberRepository;
+    private final MemberRepository memberRepository;
     //private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
     //private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
-    private DiscountPolicy discountPolicy;
+    private final DiscountPolicy discountPolicy;
 
-
-
+    //코드가 누락되었을 때 컴파일 오류로 알려줌
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
-    }
-
-    //일반 메서드 주입
-    @Autowired
-    public void init(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
