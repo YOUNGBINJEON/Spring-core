@@ -17,7 +17,7 @@ public class OrderServiceImpl implements OrderService{
     //private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
     private final DiscountPolicy discountPolicy;
 
-    //코드가 누락되었을 때 컴파일 오류로 알려줌
+
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
