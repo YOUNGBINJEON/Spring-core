@@ -19,14 +19,14 @@ public class LogDemoController {
 
     @RequestMapping("log-demo")
     @ResponseBody
-    public String logDemo(HttpServletRequest request) {
+    public String logDemo(HttpServletRequest request) throws InterruptedException {
 
         String requestURL = request.getRequestURL().toString();
         MyLogger myLogger = myLoggerProvider.getObject();
-
         myLogger.setRequestURL(requestURL);
 
         myLogger.log("Controller test");
+        Thread.sleep(1000);
         logDemoService.logic("testId");
 
         return "OK";
